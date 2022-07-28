@@ -1,23 +1,8 @@
-import styled from "styled-components";
-
-import { Header } from "../components/Header"
-
-import starryBackground from '../img/Starry-Background-Simple.png'
+import { Header } from "../../components/Header/Header"
+import { PlanetRow } from "../../components/PlanetRow/PlanetRow";
+import { HomeContainer } from "./homeStyles"
 
 export const Home = () => {
-  //Styling for the Home page component
-  const HomeContainer = styled.div`
-    width:100%;
-    height:100vh;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-image: url(${starryBackground});
-    background-size: 100% auto;
-    background-repeat:repeat-y;
-  `;
-
   //Defines the header items used within the Home Page's Header
   const headerItems = [
     {
@@ -45,6 +30,8 @@ export const Home = () => {
   return (
     <HomeContainer>
       <Header navItems={headerItems}></Header>
+      <PlanetRow></PlanetRow>
+      <PlanetRow></PlanetRow>
     </HomeContainer>
   )
 }
