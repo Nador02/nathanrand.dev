@@ -1,8 +1,21 @@
 import { PlanetRowContainer, Content, Graphics, TopText, MiddleText, BottomText, Planet } from "./planetRowStyles"
 import { Button } from '../Button/Button'
 import PropTypes from 'prop-types'
+import { gsap, Linear } from "gsap"
+import { useEffect, useRef } from "react"
 
 export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent, buttonContent, buttonPath, planet, mirrored }) => {
+  //Animation for the planet rotating effect
+  const planetRef = useRef(null);
+  useEffect(() => {
+    gsap.to(planetRef.current, {
+      rotation:360,
+      repeat:-1,
+      duration:25,
+      ease:Linear.easeNone
+    })
+  })
+
   return (
     <PlanetRowContainer>
       <Content mirrored={mirrored}>
@@ -12,7 +25,7 @@ export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent
         { buttonContent !== "" ? <Button textContent={buttonContent} path={buttonPath}></Button> : null}
       </Content>
       <Graphics mirrored={mirrored}>
-        <Planet src={planet}></Planet>
+        <Planet src={planet} ref={planetRef}></Planet>
       </Graphics>
     </PlanetRowContainer>
   )

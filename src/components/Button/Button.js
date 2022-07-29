@@ -9,7 +9,6 @@ export const Button = ({ textContent, width, color, path}) => {
   let navigate = useNavigate();
   if(path !== ""){
     buttonOnClick = () => {
-        console.log("Test");
         navigate(path);
     }
   }
