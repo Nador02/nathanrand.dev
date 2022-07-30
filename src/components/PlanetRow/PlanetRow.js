@@ -11,7 +11,7 @@ export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent
     gsap.to(planetRef.current, {
       rotation:360,
       repeat:-1,
-      duration:25,
+      duration:60,
       ease:Linear.easeNone
     })
   })

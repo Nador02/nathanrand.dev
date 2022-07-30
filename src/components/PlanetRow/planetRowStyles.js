@@ -6,7 +6,7 @@ export const PlanetRowContainer = styled.div`
     display:grid;
     height:90vh;
     max-height:90vh;
-    grid-template-columns:3.5% 46.5% 46.5% 3.5%;
+    grid-template-columns:3.5% 42.5% 8% 42.5% 3.5%;
     grid-template-rows: 100%;
 `;
 
@@ -17,7 +17,7 @@ export const Content = styled.div`
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    grid-column: ${props => props.mirrored ? '3/4' : '2/3'};
+    grid-column: ${props => props.mirrored ? '4/5' : '2/3'};
 `;
 
 export const Graphics = styled.div`
@@ -28,7 +28,7 @@ export const Graphics = styled.div`
     flex-direction:column;
     justify-content: center;
     align-items: ${props => props.mirrored ? 'flex-start' : 'flex-end'};
-    grid-column: ${props => props.mirrored ? '2/3' : '3/4'};
+    grid-column: ${props => props.mirrored ? '2/3' : '4/5'};
     grid-row:1/2;
 `;
 
@@ -46,7 +46,7 @@ export const MiddleText = styled.div`
     height:auto;
     color:white;
     background-color:black;
-    font-size:12vmin;
+    font-size:11vmin;
     font-weight:600;
 `;
 
