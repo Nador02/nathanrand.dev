@@ -7,15 +7,13 @@ import { useEffect, useRef } from "react"
 export const Rocket = () => {
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
-  let rocketDirection = 1;
+  let rocketDirection = -1;
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
-      console.log("Toggling Engines Off");
       gsap.set(rocketRef.current, { attr: { src: rocketImageStationary } });
     }
     else{
-      console.log("Toggling Engines On");
       gsap.set(rocketRef.current, { attr: { src: rocketImageThrusting } });
     }
   }
@@ -31,7 +29,6 @@ export const Rocket = () => {
       rotation:rotation,
       ease:Linear.easeNone,
       duration:0.25,
-      onComplete: console.log("Rotating Complete"),
     });
     //Update directional field
     rocketDirection = direction;
@@ -52,11 +49,8 @@ export const Rocket = () => {
     });
     //Animation for rotating at the start of the page to face the correct direction
     timeline.to(rocketRef.current, {
-      rotation:-180,
       y:'5vh',
-      ease:Linear.easeNone,
-      repeat:0,
-      duration:0.05,
+      duration:0.1,
       onComplete: toggleEngines,
       onCompleteParams: [false],
     })
