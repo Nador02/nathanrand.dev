@@ -49,7 +49,7 @@ export const Rocket = () => {
       //Animation for flying up and down throughout the page
       timeline.to(rocketRef.current, {
         motionPath: {
-          path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}],
+          path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}],
           autoRotate: true
         },
         ease:Linear.easeNone,
