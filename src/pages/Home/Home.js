@@ -1,13 +1,14 @@
 import { Header } from "../../components/Header/Header"
 import { PlanetRow } from "../../components/PlanetRow/PlanetRow";
 import { Rocket } from "../../components/Rocket/Rocket";
-import { HomeContainer } from "./homeStyles"
+import { HomeContainer, FooterContainer, LandingSurface, ContactExample} from "./homeStyles"
 import Earth from "../../img/Earth.png"
 import AboutMePlanet from "../../img/About-Me-Planet.png"
 import SpaceStation from "../../img/Space-Station.png"
 import ForecatPlanet from "../../img/Forecat-Planet.png"
 import SequoiaPlanet from "../../img/Sequoia-Planet.png"
 import BanavityPlanet from "../../img/Banavity-Planet.png"
+import landingGround from "../../img/Landing-Surface.png"
 
 export const Home = () => {
   //Defines the header items used within the Home Page's Header
@@ -44,6 +45,10 @@ export const Home = () => {
       <PlanetRow topTextContent="Over the Summer of 2022 I worked on..." middleTextContent="NASA FORECAT" bottomTextContent="Oh Boom Rocket go boom lol I make rocket." mirrored={true} planet={ForecatPlanet} buttonContent="Toggle Retro Boosters for Re-Entry" buttonPath="/about"></PlanetRow>
       <PlanetRow topTextContent="Another Project I worked on in the Summer of 2022 was..." middleTextContent="Sequoia Canopy" bottomTextContent="Teehee I made silly little website with Angular :P" planet={SequoiaPlanet} buttonContent="Prepare the Jump Drives" buttonPath="/about"></PlanetRow>
       <PlanetRow topTextContent="Something I am currently involved with is..." middleTextContent="Banavity" bottomTextContent="Banana company Banana company lololol" mirrored={true} planet={BanavityPlanet} buttonContent="Buckle Your Seatbelts!" buttonPath="/about"></PlanetRow>
+      <FooterContainer>
+        <LandingSurface src={landingGround}></LandingSurface>
+        <ContactExample></ContactExample>
+      </FooterContainer>
     </HomeContainer>
   )
 }

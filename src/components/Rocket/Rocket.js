@@ -7,17 +7,17 @@ import { useEffect, useRef, useState } from "react"
 export const Rocket = () => {
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
-  let [currentWidth, setWidth] = useState('10vmin');
+  let [currentWidth, setWidth] = useState('12vmin');
   let rocketDirection = -1;
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
       gsap.set(rocketRef.current, { attr: { src: rocketImageStationary } });
-      setWidth('10vmin');
+      setWidth('12vmin');
     }
     else{
       gsap.set(rocketRef.current, { attr: { src: rocketImageThrusting } });
-      setWidth('12.75vmin');
+      setWidth('14.75vmin');
     }
   }
   //Support function for turning the rocket around
