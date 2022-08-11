@@ -4,7 +4,7 @@ import rocketImageThrusting from "../../img/Duck-In-Rocket-With-Thrust.png"
 import { gsap, Linear } from "gsap"
 import { useEffect, useRef, useState } from "react"
 
-export const Rocket = () => {
+export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
   let [currentWidth, setWidth] = useState('12vmin');
@@ -34,6 +34,8 @@ export const Rocket = () => {
   //Timeline for the rocket animations
   let rocketRef = useRef(null);
   useEffect(() => {
+    console.log(landingSurfaceBottom);
+    console.log(landingSurfaceTop);
       let timeline = gsap.timeline({
         scrollTrigger:{
           scrub:1,
@@ -43,13 +45,14 @@ export const Rocket = () => {
             if(rocketDirection !== self.direction){
               turn(self.direction);
             }
-          }
+          },
+          end: () => window.document.body.offsetHeight*0.8 + ' top',
         },
       });
       //Animation for flying up and down throughout the page
       timeline.to(rocketRef.current, {
         motionPath: {
-          path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}],
+          path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}, {x:'8vw', y:'570vh'}, {x:'0', y:'615vh'}],
           autoRotate: true
         },
         ease:Linear.easeNone,
