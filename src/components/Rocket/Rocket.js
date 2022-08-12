@@ -7,18 +7,15 @@ import { useEffect, useRef, useState } from "react"
 export const Rocket = ({landingSurface}) => {
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
-  let [currentWidth, setWidth] = useState('12vmin');
+  let [currentWidth] = useState('14vmin');
   let rocketDirection = -1;
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
-      console.log("Engines should be off...");
       gsap.set(rocketRef.current, { attr: { src: rocketImageStationary } });
-      setWidth('12vmin');
     }
     else{
       gsap.set(rocketRef.current, { attr: { src: rocketImageThrusting } });
-      setWidth('14.75vmin');
     }
   }
   //Support function for turning the rocket around
@@ -44,13 +41,13 @@ export const Rocket = ({landingSurface}) => {
           scrub:1,
           onLeaveBack: () => {toggleEngines(true)},
           onEnter: () => {toggleEngines(false)},
+          onEnterBack: (self) => {toggleEngines(false); turn(self.direction);},
           onUpdate: (self) => {
             if(rocketDirection !== self.direction){
               turn(self.direction);
             }
           },
           end: () => window.document.body.offsetHeight*0.85 + ' top',
-          markers:true,
         },
       });
       //Animation for flying up and down throughout the page
@@ -64,11 +61,13 @@ export const Rocket = ({landingSurface}) => {
       });
       //Animation for landing on the footer
       timeline.to(rocketRef.current, {
-        rotate:-90,
-        y: () => landingSurface.top - 405,
+        rotate: -90,
+        y: () => landingSurface.top - 400,
         x: () => -rocketRef.current.getBoundingClientRect().width*0.35,
         ease:Linear.easeNone,
-        onComplete: () => {console.log("test"); toggleEngines(true)},
+        onComplete: () => {
+          toggleEngines(true);
+        },
         duration:0.05,
       })
 
