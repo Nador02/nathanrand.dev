@@ -4,7 +4,7 @@ import rocketImageThrusting from "../../img/Duck-In-Rocket-With-Thrust.png"
 import { gsap, Linear } from "gsap"
 import { useEffect, useRef, useState } from "react"
 
-export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
+export const Rocket = ({landingSurface}) => {
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
   let [currentWidth, setWidth] = useState('12vmin');
@@ -12,6 +12,7 @@ export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
+      console.log("Engines should be off...");
       gsap.set(rocketRef.current, { attr: { src: rocketImageStationary } });
       setWidth('12vmin');
     }
@@ -34,8 +35,10 @@ export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
   //Timeline for the rocket animations
   let rocketRef = useRef(null);
   useEffect(() => {
-    console.log(landingSurfaceBottom);
-    console.log(landingSurfaceTop);
+    //Waits for the home page to be rendered before generating our animation structure
+    if(landingSurface == null){
+      return;
+    }
       let timeline = gsap.timeline({
         scrollTrigger:{
           scrub:1,
@@ -46,7 +49,8 @@ export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
               turn(self.direction);
             }
           },
-          end: () => window.document.body.offsetHeight*0.8 + ' top',
+          end: () => window.document.body.offsetHeight*0.85 + ' top',
+          markers:true,
         },
       });
       //Animation for flying up and down throughout the page
@@ -56,8 +60,18 @@ export const Rocket = ({landingSurfaceTop, landingSurfaceBottom}) => {
           autoRotate: true
         },
         ease:Linear.easeNone,
-        duration:1,
+        duration:0.95,
       });
+      //Animation for landing on the footer
+      timeline.to(rocketRef.current, {
+        rotate:-90,
+        y: () => landingSurface.top - 405,
+        x: () => -rocketRef.current.getBoundingClientRect().width*0.35,
+        ease:Linear.easeNone,
+        onComplete: () => {console.log("test"); toggleEngines(true)},
+        duration:0.05,
+      })
+
   });
   return (
     <RocketIcon src={rocketImage} ref={rocketRef} style={{width: currentWidth}}></RocketIcon>
