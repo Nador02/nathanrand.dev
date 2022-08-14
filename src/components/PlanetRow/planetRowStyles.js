@@ -46,7 +46,7 @@ export const MiddleText = styled.div`
     height:auto;
     color:white;
     background-color:black;
-    font-size:11vmin;
+    font-size: ${props => {return props.fontSize}};
     font-weight:600;
 `;
 

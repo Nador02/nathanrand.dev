@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { gsap, Linear } from "gsap"
 import { useEffect, useRef } from "react"
 
-export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent, buttonContent, buttonPath, planet, mirrored }) => {
+export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent, buttonContent, buttonPath, planet, mirrored, isProject }) => {
   //Animation for the planet rotating effect
   const planetRef = useRef(null);
   useEffect(() => {
@@ -16,11 +16,19 @@ export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent
     })
   })
 
+  //Title font-size determination
+  let middleFontSize = '11vmin';
+  if(isProject){
+    middleFontSize = '8.5vmin';
+  }
+
+  console.log(middleFontSize);
+
   return (
     <PlanetRowContainer>
       <Content mirrored={mirrored}>
         { topTextContent !== "" ? <TopText>{topTextContent}</TopText> : null}
-        { middleTextContent !== "" ? <MiddleText>{middleTextContent}</MiddleText> : null}
+        { middleTextContent !== "" ? <MiddleText fontSize={middleFontSize}>{middleTextContent}</MiddleText> : null}
         { bottomTextContent !== "" ? <BottomText>{bottomTextContent}</BottomText> : null}
         { buttonContent !== "" ? <Button textContent={buttonContent} path={buttonPath}></Button> : null}
       </Content>
@@ -39,6 +47,7 @@ PlanetRow.defaultProps = {
   planetPath: "",
   buttonPath: "",
   mirrored: false,
+  isProject: false,
 }
 
 PlanetRow.propTypes = {
@@ -49,4 +58,5 @@ PlanetRow.propTypes = {
   planetPath: PropTypes.string,
   buttonPath: PropTypes.string,
   mirrored: PropTypes.bool,
+  isProject: PropTypes.bool,
 }

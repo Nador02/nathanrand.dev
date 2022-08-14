@@ -38,7 +38,7 @@ export const Rocket = ({landingSurface}) => {
     }
       let timeline = gsap.timeline({
         scrollTrigger:{
-          scrub:1,
+          scrub:0.75,
           onLeaveBack: () => {toggleEngines(true)},
           onEnter: () => {toggleEngines(false)},
           onEnterBack: (self) => {toggleEngines(false); turn(self.direction);},

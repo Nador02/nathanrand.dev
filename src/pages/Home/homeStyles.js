@@ -31,6 +31,7 @@ background-repeat: no-repeat;
 export const LandingSurface = styled.img`
 width:100%;
 height:auto;
+z-index:10;
 `;
 
 export const ContactExample = styled.div`
