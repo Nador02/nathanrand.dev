@@ -22,7 +22,6 @@ export const PlanetRow = ({ topTextContent, middleTextContent, bottomTextContent
     middleFontSize = '8.5vmin';
   }
 
-  console.log(middleFontSize);
 
   return (
     <PlanetRowContainer>

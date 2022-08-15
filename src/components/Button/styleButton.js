@@ -18,6 +18,7 @@ export const ButtonItem = styled.button`
     font-size:2.75vmin;
     font-weight:600;
     border-radius:1vmin;
+    border:none;
     padding:0 3%;
     box-sizing: border-box;
     background-color: white;

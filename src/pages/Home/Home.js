@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from "react"
 import { Header } from "../../components/Header/Header"
 import { PlanetRow } from "../../components/PlanetRow/PlanetRow";
 import { Rocket } from "../../components/Rocket/Rocket";
-import { HomeContainer, FooterContainer, LandingSurface, ContactExample} from "./homeStyles"
+import { ContactMe } from "../../components/ContactMe/ContactMe"
+import { HomeContainer, FooterContainer, LandingSurface} from "./homeStyles"
 import Earth from "../../img/Earth.png"
 import AboutMePlanet from "../../img/About-Me-Planet.png"
 import SpaceStation from "../../img/Space-Station.png"
@@ -53,7 +54,7 @@ export const Home = () => {
       <PlanetRow topTextContent="Something I am currently involved with is..." middleTextContent="Banavity" bottomTextContent="Which is a startup web application project that I founded that aims to provide an interactive physics sandbox in which students can setup, simulate, and get solutions to a variety of unique problems." mirrored={true} planet={BanavityPlanet} buttonContent="Buckle Your Seatbelts!" buttonPath="/about" isProject={true}></PlanetRow>
       <FooterContainer>
         <LandingSurface src={landingGround} ref={landingElement}></LandingSurface>
-        <ContactExample></ContactExample>
+        <ContactMe></ContactMe>
       </FooterContainer>
     </HomeContainer>
   )
