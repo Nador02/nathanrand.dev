@@ -62,8 +62,8 @@ export const Rocket = ({landingSurface}) => {
       //Animation for landing on the footer
       timeline.to(rocketRef.current, {
         rotate: -90,
-        y: () => landingSurface.top - 400,
-        x: () => -rocketRef.current.getBoundingClientRect().width*0.35,
+        y: () => landingSurface.top - 320,
+        x: () => rocketRef.current.getBoundingClientRect().width*0.35,
         ease:Linear.easeNone,
         onComplete: () => {
           toggleEngines(true);

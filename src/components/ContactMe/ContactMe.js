@@ -1,16 +1,19 @@
-import { ContactContainer, FormContainer, InfoContainer, Title,} from "./contactMeStyles"
+import { ContactContainer, FormContainer, InfoContainer, Title, InfoContent, SocialsContainer, ContactMedium, SocialsRow} from "./contactMeStyles"
 import { TextField, Button, Box } from "@mui/material"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone} from '@fortawesome/free-solid-svg-icons'
+import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 
 export const ContactMe = () => {
   return (
     <ContactContainer>
         <FormContainer>
-            <Title>Contact Me</Title>
+            <Title style={{gridColumn:'1/3', height:'100%'}} >Contact Me</Title>
             <TextField id="firstName" label="First Name" variant="filled" name="firstName" color="primary" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
             <TextField id="lastName" label="Last Name" variant="filled" name="lastName" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
             <TextField id="email" label="Email" variant="filled" name="email" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
             <TextField id="phoneNumber" label="Phone Number" variant="filled" name="phoneNumber" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
-            <TextField id="message" label="Message" variant="filled" name="message" multiline rows={4} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
+            <TextField id="message" label="Message" variant="filled" name="message" multiline rows={3} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
             <Box sx={{
               display:'flex',
               justifyContent:'center',
@@ -20,7 +23,29 @@ export const ContactMe = () => {
               <Button style={{maxWidth:'100%', minWidth:'100%', maxHeight:'50%', minHeight:'50%', fontSize:'2.25vmin', fontWeight:600,}} variant="contained" size="large">Beam Up The Transpondence</Button>
             </Box>
         </FormContainer>
-        <InfoContainer></InfoContainer>
+        <InfoContainer>
+          <Title style={{fontSize:'1.75vmin'}}>Feel Free to</Title>
+          <Title style={{fontSize:'6.5vmin'}}>Reach Out</Title>
+          <InfoContent>With anything ranging from work inquiries to just wanting to chat. I am always open to new and exciting things and I love meeting new people! Please, utilize the form to the left or connect with me through any of the following mediums!</InfoContent>
+          <SocialsContainer>
+            <SocialsRow>
+              <FontAwesomeIcon icon={faEnvelope} style={{fontSize:'3.25vmin', color:'white'}}/>
+              <ContactMedium>nrand02@vt.edu</ContactMedium>
+            </SocialsRow>
+            <SocialsRow>
+              <FontAwesomeIcon icon={faPhone} style={{fontSize:'3.25vmin', color:'white'}}/>
+              <ContactMedium>703-969-3878</ContactMedium>
+            </SocialsRow>
+            <SocialsRow>
+              <FontAwesomeIcon icon={faLinkedin}/>
+              <ContactMedium>Connect with me</ContactMedium>
+            </SocialsRow>
+            <SocialsRow>
+              <FontAwesomeIcon icon={faSquareGithub}/>
+              <ContactMedium>Check out my repos</ContactMedium>
+            </SocialsRow>
+          </SocialsContainer>
+        </InfoContainer>
     </ContactContainer>
   )
 }

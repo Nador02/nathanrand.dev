@@ -5,6 +5,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 function App() {
   //Register GSAP Plugins
