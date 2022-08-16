@@ -5,7 +5,7 @@ export const ContactContainer = styled.div`
 height:65vh;
 width:100%;
 display:grid;
-grid-template-columns:60% 40%;
+grid-template-columns:65% 35%;
 background-color:#67C167;
 `;
 
@@ -16,7 +16,7 @@ padding:0 5% 5% 10%;
 box-sizing:border-box;
 display:grid;
 grid-template-columns:50% 50%;
-grid-template-rows: 22.5% 15% 15% 20% 20%;
+grid-template-rows: 22.5% 15% 15% 20% 27.5%;
 column-gap:5%;
 `;
 
