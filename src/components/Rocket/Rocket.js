@@ -9,6 +9,7 @@ export const Rocket = ({landingSurface}) => {
   let rocketImage = rocketImageStationary;
   let [currentWidth] = useState('14vmin');
   let rocketDirection = -1;
+  let timeline = useRef(null);
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
@@ -32,46 +33,58 @@ export const Rocket = ({landingSurface}) => {
   //Timeline for the rocket animations
   let rocketRef = useRef(null);
   useEffect(() => {
-    //Waits for the home page to be rendered before generating our animation structure
-    if(landingSurface == null){
-      return;
-    }
-      let timeline = gsap.timeline({
-        scrollTrigger:{
-          scrub:0.75,
-          onLeaveBack: () => {toggleEngines(true)},
-          onEnter: () => {toggleEngines(false)},
-          onEnterBack: (self) => {toggleEngines(false); turn(self.direction);},
-          onUpdate: (self) => {
-            if(rocketDirection !== self.direction){
-              turn(self.direction);
-            }
-          },
-          end: () => window.document.body.offsetHeight*0.85 + ' top',
-        },
-      });
-      //Animation for flying up and down throughout the page
-      timeline.to(rocketRef.current, {
-        motionPath: {
-          path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}, {x:'8vw', y:'570vh'}, {x:'0', y:'615vh'}],
-          autoRotate: true
-        },
-        ease:Linear.easeNone,
-        duration:0.95,
-      });
-      //Animation for landing on the footer
-      timeline.to(rocketRef.current, {
-        rotate: -90,
-        y: () => landingSurface.top - 320,
-        x: () => rocketRef.current.getBoundingClientRect().width*0.35,
-        ease:Linear.easeNone,
-        onComplete: () => {
-          toggleEngines(true);
-        },
-        duration:0.05,
-      })
-
+    createTimeline();
   });
+
+  let createTimeline = () => {
+        //Waits for the home page to be rendered before generating our animation structure
+        if(landingSurface == null){
+          return;
+        }
+          timeline.current = gsap.timeline({
+            scrollTrigger:{
+              scrub:0.75,
+              onLeaveBack: () => {toggleEngines(true)},
+              onEnter: () => {toggleEngines(false)},
+              onEnterBack: (self) => {toggleEngines(false); turn(self.direction);},
+              onUpdate: (self) => {
+                if(rocketDirection !== self.direction){
+                  turn(self.direction);
+                }
+              },
+              end: () => window.document.body.offsetHeight*0.85 + ' top',
+            },
+          });
+          //Animation for flying up and down throughout the page
+          timeline.current.to(rocketRef.current, {
+            motionPath: {
+              path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}, {x:'8vw', y:'570vh'}, {x:'0', y:'615vh'}],
+              autoRotate: true
+            },
+            ease:Linear.easeNone,
+            duration:0.95,
+          });
+          //Animation for landing on the footer
+          timeline.current.to(rocketRef.current, {
+            rotate: -90,
+            y: () => landingSurface.top - 0.3755*window.innerHeight,
+            x: () => rocketRef.current.getBoundingClientRect().width*0.35,
+            ease:Linear.easeNone,
+            onComplete: () => {
+              toggleEngines(true);
+            },
+            duration:0.05,
+          })
+    
+  }
+
+  let resize = () => {
+    let progress = timeline.current.progress;
+    timeline.current.kill();
+    createTimeline().progress(progress);
+  }
+
+  window.addEventListener("resize", resize);
   return (
     <RocketIcon src={rocketImage} ref={rocketRef} style={{width: currentWidth}}></RocketIcon>
   )
