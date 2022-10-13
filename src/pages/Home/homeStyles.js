@@ -33,9 +33,3 @@ width:100%;
 height:auto;
 z-index:10;
 `;
-
-export const ContactExample = styled.div`
-height:60vh;
-width:100%;
-background-color:#67C167;
-`
