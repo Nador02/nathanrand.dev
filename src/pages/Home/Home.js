@@ -13,10 +13,21 @@ import BanavityPlanet from "../../img/Banavity-Planet.png"
 import landingGround from "../../img/Landing-Surface.png"
 
 export const Home = () => {
+  let homeElement = useRef(null);
   let landingElement = useRef(null);
   let [landingSurface, updateLandingSurface] = useState(null);
+  let timeoutResize = useRef(null);
   useEffect(() => {
-    updateLandingSurface(landingElement.current.getBoundingClientRect());
+    updateLandingSurface((-1)*homeElement.current.getBoundingClientRect().top + landingElement.current.getBoundingClientRect().top);
+
+    window.addEventListener("resize", () => {
+      clearTimeout(timeoutResize.current);
+      timeoutResize.current = setTimeout(resized, 250);
+    });
+
+    let resized = () => {
+      updateLandingSurface((-1)*homeElement.current.getBoundingClientRect().top + landingElement.current.getBoundingClientRect().top);
+    }
   }, []);
   //Defines the header items used within the Home Page's Header
   const headerItems = [
@@ -41,11 +52,9 @@ export const Home = () => {
       scrollPosition:''
     }
   ];
-
   return (
-    <HomeContainer>
+    <HomeContainer ref={homeElement}>
       <Header navItems={headerItems}></Header>
-      <Rocket landingSurface={landingSurface}></Rocket>
       <PlanetRow topTextContent="Hello there! My name is" middleTextContent="Nathan Rand" bottomTextContent="I am an aerospace engineer and full-stack developer who loves getting involved in groundbreaking and seemingly impossible projects. Feel free to look around at my work and reach out if you think that we could help each other!" planet={Earth}></PlanetRow>
       <PlanetRow topTextContent="So this part is all..." middleTextContent="About Me" bottomTextContent="Here's where you can find out about what I'm good at, where my experience lies, and what I love to do. This is me in full, a picture of what I will bring to any team I am apart of." mirrored={true} planet={AboutMePlanet} buttonContent="Initiate Landing Sequence" buttonPath="/about"></PlanetRow>
       <PlanetRow topTextContent="Now we can look at the good stuff..." middleTextContent="My Projects" bottomTextContent="These are the things that I have really put my all into, hopefully it will give you a taste of the unique skillset that I can bring to any team. To check some of them out, just keep on scrolling down!" planet={SpaceStation}></PlanetRow>
@@ -56,6 +65,7 @@ export const Home = () => {
         <LandingSurface src={landingGround} ref={landingElement}></LandingSurface>
         <ContactMe></ContactMe>
       </FooterContainer>
+      <Rocket landingSurface={landingSurface}></Rocket>
     </HomeContainer>
   )
 }

@@ -5,6 +5,7 @@ import { gsap, Linear } from "gsap"
 import { useEffect, useRef, useState } from "react"
 
 export const Rocket = ({landingSurface}) => {
+
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
   let [currentWidth] = useState('14vmin');
@@ -32,8 +33,24 @@ export const Rocket = ({landingSurface}) => {
   }
   //Timeline for the rocket animations
   let rocketRef = useRef(null);
+  let timeOutResize = useRef(null);
   useEffect(() => {
     createTimeline();
+
+    let resize = () => {
+      clearTimeout(timeOutResize.current);
+      timeOutResize.current = setTimeout(resized, 500);
+    }
+
+    let resized = () => {
+      console.log(timeline);
+      let progress = timeline.current.scrollTrigger.progress;
+      timeline.current.kill();
+      createTimeline();
+      timeline.current.progress(progress);
+    }
+
+    window.addEventListener("resize", resize);
   });
 
   let createTimeline = () => {
@@ -67,7 +84,7 @@ export const Rocket = ({landingSurface}) => {
           //Animation for landing on the footer
           timeline.current.to(rocketRef.current, {
             rotate: -90,
-            y: () => landingSurface.top - 0.3755*window.innerHeight,
+            y: () => landingSurface,
             x: () => rocketRef.current.getBoundingClientRect().width*0.35,
             ease:Linear.easeNone,
             onComplete: () => {
@@ -77,14 +94,6 @@ export const Rocket = ({landingSurface}) => {
           })
     
   }
-
-  let resize = () => {
-    let progress = timeline.current.progress;
-    timeline.current.kill();
-    createTimeline().progress(progress);
-  }
-
-  window.addEventListener("resize", resize);
   return (
     <RocketIcon src={rocketImage} ref={rocketRef} style={{width: currentWidth}}></RocketIcon>
   )
