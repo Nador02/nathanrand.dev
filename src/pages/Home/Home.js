@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react"
 import { Header } from "../../components/Header/Header"
 import { PlanetRow } from "../../components/PlanetRow/PlanetRow";
 import { Rocket } from "../../components/Rocket/Rocket";
@@ -13,22 +12,6 @@ import BanavityPlanet from "../../img/Banavity-Planet.png"
 import landingGround from "../../img/Landing-Surface.png"
 
 export const Home = () => {
-  let homeElement = useRef(null);
-  let landingElement = useRef(null);
-  let [landingSurface, updateLandingSurface] = useState(null);
-  let timeoutResize = useRef(null);
-  useEffect(() => {
-    updateLandingSurface((-1)*homeElement.current.getBoundingClientRect().top + landingElement.current.getBoundingClientRect().top);
-
-    window.addEventListener("resize", () => {
-      clearTimeout(timeoutResize.current);
-      timeoutResize.current = setTimeout(resized, 250);
-    });
-
-    let resized = () => {
-      updateLandingSurface((-1)*homeElement.current.getBoundingClientRect().top + landingElement.current.getBoundingClientRect().top);
-    }
-  }, []);
   //Defines the header items used within the Home Page's Header
   const headerItems = [
     {
@@ -53,7 +36,7 @@ export const Home = () => {
     }
   ];
   return (
-    <HomeContainer ref={homeElement}>
+    <HomeContainer>
       <Header navItems={headerItems}></Header>
       <PlanetRow topTextContent="Hello there! My name is" middleTextContent="Nathan Rand" bottomTextContent="I am an aerospace engineer and full-stack developer who loves getting involved in groundbreaking and seemingly impossible projects. Feel free to look around at my work and reach out if you think that we could help each other!" planet={Earth}></PlanetRow>
       <PlanetRow topTextContent="So this part is all..." middleTextContent="About Me" bottomTextContent="Here's where you can find out about what I'm good at, where my experience lies, and what I love to do. This is me in full, a picture of what I will bring to any team I am apart of." mirrored={true} planet={AboutMePlanet} buttonContent="Initiate Landing Sequence" buttonPath="/about"></PlanetRow>
@@ -62,10 +45,10 @@ export const Home = () => {
       <PlanetRow topTextContent="Another Project I worked on in the Summer of 2022 was..." middleTextContent="Sequoia Canopy" bottomTextContent="Where myself and 5 other interns developed a full stack web application in order to create an effective and secure manner for company members to access contracts and opportunities." planet={SequoiaPlanet} buttonContent="Prepare the Jump Drives" buttonPath="/about" isProject={true}></PlanetRow>
       <PlanetRow topTextContent="Something I am currently involved with is..." middleTextContent="Banavity" bottomTextContent="Which is a startup web application project that I founded that aims to provide an interactive physics sandbox in which students can setup, simulate, and get solutions to a variety of unique problems." mirrored={true} planet={BanavityPlanet} buttonContent="Buckle Your Seatbelts!" buttonPath="/about" isProject={true}></PlanetRow>
       <FooterContainer>
-        <LandingSurface src={landingGround} ref={landingElement}></LandingSurface>
+        <LandingSurface src={landingGround}></LandingSurface>
         <ContactMe></ContactMe>
       </FooterContainer>
-      <Rocket landingSurface={landingSurface}></Rocket>
+      <Rocket></Rocket>
     </HomeContainer>
   )
 }

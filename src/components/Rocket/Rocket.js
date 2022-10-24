@@ -4,7 +4,7 @@ import rocketImageThrusting from "../../img/Duck-In-Rocket-With-Thrust.png"
 import { gsap, Linear } from "gsap"
 import { useEffect, useRef, useState } from "react"
 
-export const Rocket = ({landingSurface}) => {
+export const Rocket = () => {
 
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
@@ -39,14 +39,12 @@ export const Rocket = ({landingSurface}) => {
 
     let resize = () => {
       clearTimeout(timeOutResize.current);
-      timeOutResize.current = setTimeout(resized, 500);
+      timeOutResize.current = setTimeout(resized, 1000);
     }
 
     let resized = () => {
       let progress = timeline.current.scrollTrigger.progress;
       timeline.current.kill();
-      timeline.current = null;
-      console.log(landingSurface);
       createTimeline();
       timeline.current.progress(progress);
     }
@@ -55,10 +53,6 @@ export const Rocket = ({landingSurface}) => {
   });
 
   let createTimeline = () => {
-        //Waits for the home page to be rendered before generating our animation structure
-        if(landingSurface == null){
-          return;
-        }
           timeline.current = gsap.timeline({
             scrollTrigger:{
               scrub:0.75,
@@ -72,6 +66,13 @@ export const Rocket = ({landingSurface}) => {
               },
               end: () => window.document.body.offsetHeight*0.85 + ' top',
             },
+          });
+          //Animation for landing on the footer
+          timeline.current.to(rocketRef.current, {
+            y: () => '0vh',
+            x: () => '0vw',
+            ease:Linear.easeNone,
+            duration:0.001,
           });
           //Animation for flying up and down throughout the page
           timeline.current.to(rocketRef.current, {
