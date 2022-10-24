@@ -43,9 +43,10 @@ export const Rocket = ({landingSurface}) => {
     }
 
     let resized = () => {
-      console.log(timeline);
       let progress = timeline.current.scrollTrigger.progress;
       timeline.current.kill();
+      timeline.current = null;
+      console.log(landingSurface);
       createTimeline();
       timeline.current.progress(progress);
     }
@@ -84,7 +85,7 @@ export const Rocket = ({landingSurface}) => {
           //Animation for landing on the footer
           timeline.current.to(rocketRef.current, {
             rotate: -90,
-            y: () => landingSurface,
+            y: () => '628vh',
             x: () => rocketRef.current.getBoundingClientRect().width*0.35,
             ease:Linear.easeNone,
             onComplete: () => {
