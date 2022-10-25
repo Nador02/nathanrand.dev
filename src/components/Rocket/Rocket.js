@@ -38,6 +38,7 @@ export const Rocket = () => {
     createTimeline();
 
     let resize = () => {
+      console.log((window.innerWidth/window.innerHeight));
       clearTimeout(timeOutResize.current);
       timeOutResize.current = setTimeout(resized, 1000);
     }
@@ -84,9 +85,16 @@ export const Rocket = () => {
             duration:0.95,
           });
           //Animation for landing on the footer
+          let landingY = (640 - (6)*((window.innerWidth/window.innerHeight)**(1.2))).toString() + 'vh';
+          if((window.innerWidth/window.innerHeight) <= 0.675){
+            landingY = "640vh";
+          }
+          else if(window.innerWidth/window.innerHeight < 1){
+            landingY = (640 - (4.5)*((window.innerWidth/window.innerHeight)**(1.5))).toString() + 'vh';
+          }
           timeline.current.to(rocketRef.current, {
             rotate: -90,
-            y: () => '628vh',
+            y: () => landingY,
             x: () => rocketRef.current.getBoundingClientRect().width*0.35,
             ease:Linear.easeNone,
             onComplete: () => {
