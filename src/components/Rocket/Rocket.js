@@ -54,6 +54,13 @@ export const Rocket = () => {
   });
 
   let createTimeline = () => {
+          //Animation for landing on the footer
+          let landingMarker = 640; //in vh units
+          let timelinePercentage = 0.85;
+          if(window.innerWidth < 1200){
+            landingMarker = 585;
+            timelinePercentage = 0.75;
+          }
           timeline.current = gsap.timeline({
             scrollTrigger:{
               scrub:0.75,
@@ -65,7 +72,7 @@ export const Rocket = () => {
                   turn(self.direction);
                 }
               },
-              end: () => window.document.body.offsetHeight*0.85 + ' top',
+              end: () => window.document.body.offsetHeight*timelinePercentage + ' top',
             },
           });
           //Animation for landing on the footer
@@ -84,13 +91,12 @@ export const Rocket = () => {
             ease:Linear.easeNone,
             duration:0.95,
           });
-          //Animation for landing on the footer
-          let landingY = (640 - (6)*((window.innerWidth/window.innerHeight)**(1.2))).toString() + 'vh';
+          let landingY = (landingMarker - (6)*((window.innerWidth/window.innerHeight)**(1.2))).toString() + 'vh';
           if((window.innerWidth/window.innerHeight) <= 0.675){
             landingY = "640vh";
           }
           else if(window.innerWidth/window.innerHeight < 1){
-            landingY = (640 - (4.5)*((window.innerWidth/window.innerHeight)**(1.5))).toString() + 'vh';
+            landingY = (landingMarker - (4.5)*((window.innerWidth/window.innerHeight)**(1.5))).toString() + 'vh';
           }
           timeline.current.to(rocketRef.current, {
             rotate: -90,

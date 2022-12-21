@@ -3,17 +3,24 @@ import { TextField, Button, Box } from "@mui/material"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone} from '@fortawesome/free-solid-svg-icons'
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export const ContactMe = () => {
+  //Define our font size for MUI components based on screen width
+  const smallResolution = useMediaQuery('(max-width:500px)');
+  let fontSize = 18;
+  if(smallResolution){
+    fontSize = 14;
+  }
   return (
     <ContactContainer>
         <FormContainer>
             <Title style={{gridColumn:'1/3', height:'100%'}} >Contact Me</Title>
-            <TextField id="firstName" label="First Name" variant="filled" name="firstName" color="primary" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
-            <TextField id="lastName" label="Last Name" variant="filled" name="lastName" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
-            <TextField id="email" label="Email" variant="filled" name="email" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
-            <TextField id="phoneNumber" label="Phone Number" variant="filled" name="phoneNumber" InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
-            <TextField id="message" label="Message" variant="filled" name="message" multiline rows={3} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: 18, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: 18 } }}></TextField>
+            <TextField id="firstName" label="First Name" variant="filled" name="firstName" color="primary" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }}></TextField>
+            <TextField id="lastName" label="Last Name" variant="filled" name="lastName" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }}></TextField>
+            <TextField id="email" label="Email" variant="filled" name="email" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }}></TextField>
+            <TextField id="phoneNumber" label="Phone Number" variant="filled" name="phoneNumber" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }}></TextField>
+            <TextField id="message" label="Message" variant="filled" name="message" multiline rows={3} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }}></TextField>
             <Box sx={{
               display:'flex',
               justifyContent:'center',

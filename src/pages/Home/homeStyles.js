@@ -19,6 +19,11 @@ background-repeat:repeat-y;
 export const FooterContainer = styled.div`
 width:100%;
 height:180vh;
+@media (max-width: 1200px){
+    grid-template-columns:100%;
+    grid-template-rows:65% 35%;
+    height:240vh;
+}
 display:flex;
 flex-direction:column;
 justify-content:flex-end;
