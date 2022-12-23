@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const PlanetRowContainer = styled.div`
     width:100%;
     display:grid;
+    @media (max-width: 500px){
+        height:60vh;
+        max-height:60vh;
+    }
     height:90vh;
     max-height:90vh;
     grid-template-columns:3.5% 42.5% 8% 42.5% 3.5%;

@@ -3,6 +3,7 @@ import rocketImageStationary from "../../img/Duck-In-Rocket.png"
 import rocketImageThrusting from "../../img/Duck-In-Rocket-With-Thrust.png"
 import { gsap, Linear } from "gsap"
 import { useEffect, useRef, useState } from "react"
+import { useMediaQuery } from "@mui/material"
 
 export const Rocket = () => {
 
@@ -11,6 +12,13 @@ export const Rocket = () => {
   let [currentWidth] = useState('14vmin');
   let rocketDirection = -1;
   let timeline = useRef(null);
+  //Determines path for regular view and mobile
+  let path = [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}, {x:'8vw', y:'570vh'}, {x:'-70vw', y:'600vh'}];
+  //Define our font size for MUI components based on screen width
+  const smallResolution = useMediaQuery('(max-width:500px)');
+  if(smallResolution){
+    path = [{x:'6vw', y:'30vh'}, {x:'-8vw', y:'70vh'}, {x:'-8vw', y:'100vh'}, {x:'6vw', y:'140vh'}, {x:'6vw', y:'150vh'}, {x:'-8vw', y:'190vh'}, {x:'-8vw', y:'220vh'}, {x:'6vw', y:'250vh'}, {x:'6vw', y:'280vh'}, {x:'-10vw', y:'320vh'}, {x:'-10vw', y:'350vh'}, {x:'8vw', y:'380vh'}, {x:'-70vw', y:'390vh'}]
+  }
   //Support function that "toggles the engines" for the rocket by switching the image paths
   let toggleEngines = (enginesOff) => {
     if(enginesOff){
@@ -55,11 +63,12 @@ export const Rocket = () => {
 
   let createTimeline = () => {
           //Animation for landing on the footer
-          let landingMarker = 640; //in vh units
-          let timelinePercentage = 0.85;
+          let timelinePercentage = 0.8;
           if(window.innerWidth < 1200){
-            landingMarker = 585;
             timelinePercentage = 0.75;
+          }
+          else if(smallResolution){
+            timelinePercentage = 0.7;
           }
           timeline.current = gsap.timeline({
             scrollTrigger:{
@@ -75,39 +84,15 @@ export const Rocket = () => {
               end: () => window.document.body.offsetHeight*timelinePercentage + ' top',
             },
           });
-          //Animation for landing on the footer
-          timeline.current.to(rocketRef.current, {
-            y: () => '0vh',
-            x: () => '0vw',
-            ease:Linear.easeNone,
-            duration:0.001,
-          });
           //Animation for flying up and down throughout the page
           timeline.current.to(rocketRef.current, {
             motionPath: {
-              path: [{x:'8vw', y:'40vh'}, {x:'0', y:'80vh'}, {x:'-8vw', y:'120vh'}, {x:'0', y:'160vh'}, {x:'8vw', y:'210vh'}, {x:'0', y:'255vh'}, {x:'-8vw', y:'300vh'}, {x:'0', y:'345vh'}, {x:'8vw', y:'390vh'}, {x:'0', y:'435vh'}, {x:'-8vw', y:'480vh'}, {x:'0', y:'525vh'}, {x:'8vw', y:'570vh'}, {x:'0', y:'615vh'}],
+              path: path,
               autoRotate: true
             },
             ease:Linear.easeNone,
             duration:0.95,
           });
-          let landingY = (landingMarker - (6)*((window.innerWidth/window.innerHeight)**(1.2))).toString() + 'vh';
-          if((window.innerWidth/window.innerHeight) <= 0.675){
-            landingY = "640vh";
-          }
-          else if(window.innerWidth/window.innerHeight < 1){
-            landingY = (landingMarker - (4.5)*((window.innerWidth/window.innerHeight)**(1.5))).toString() + 'vh';
-          }
-          timeline.current.to(rocketRef.current, {
-            rotate: -90,
-            y: () => landingY,
-            x: () => rocketRef.current.getBoundingClientRect().width*0.35,
-            ease:Linear.easeNone,
-            onComplete: () => {
-              toggleEngines(true);
-            },
-            duration:0.05,
-          })
     
   }
   return (

@@ -6,10 +6,15 @@ height:65vh;
 width:100%;
 display:grid;
 grid-template-columns:65% 35%;
-@media (max-width: 1200px){
+@media screen (max-width: 1200px) and (min-width: 500px){
     grid-template-columns:100%;
     grid-template-rows:65% 35%;
     height:120vh;
+}
+@media (max-width: 500px){
+    grid-template-columns:100%;
+    grid-template-rows:65% 35%;
+    height:100vh;
 }
 background-color:#67C167;
 `;

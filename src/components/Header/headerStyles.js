@@ -5,6 +5,10 @@ export const HeaderContainer = styled.div`
 width:100%;
 height:10vh;
 max-height:10vh;
+@media (max-width: 500px){
+  height: 1vh;
+  max-height: 1vh;
+}
 display: flex;
 flex-direction: row;
 justify-content: flex-end;
