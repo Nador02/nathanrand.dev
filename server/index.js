@@ -8,12 +8,14 @@ Version: 1.0
 */
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const sgMail = require('@sendgrid/mail');
 const port = 5000;
 
 // Use express JSON middleware
 app.use(express.json());
+app.use(cors());
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -22,7 +24,8 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.post('/contact', (req, res) => {
-  let { package } = req.body;
+  let package = req.body;
+
   //ensure that all pertinent information was included in the request
   if(!package){
     res.status(418).send({message: 'We need a contact email package to send the email!'});
@@ -36,18 +39,23 @@ app.post('/contact', (req, res) => {
   else if(!package.email){
     res.status(418).send({message: 'An email is required'});
   }
-  else if(!package.phoneNumber){
-    res.status(418).send({message: 'A phone number is required'});
-  }
   else if(!package.message){
     res.status(418).send({message: 'A message is required'});
+  }
+
+  // Check for the optional phone number field
+  let phoneNum;
+  if(!package.phoneNum){
+    phoneNum = "N/A"
+  }
+  else{
+    phoneNum = package.phoneNum;
   }
 
   // If everything is included, unpack the email package from the front-end
   let firstName = package.firstName;
   let lastName = package.lastName;
   let email = package.email;
-  let phoneNum = package.phoneNumber;
   let message = package.message;
 
   // Define our email msg
