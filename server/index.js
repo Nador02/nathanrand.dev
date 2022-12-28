@@ -7,23 +7,24 @@ Date: 12/26/2022
 Version: 1.0
 */
 
-const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+const express = require('express');
+const app = express();
+const port = 5000;
 
-const msg = {
-  to: 'nrand02@vt.edu', // Change to your recipient
-  from: 'contactMe@em3856.nathanrand.dev', // Change to your verified sender
-  subject: 'Sending with SendGrid is Fun',
-  text: 'and easy to do anywhere, even with Node.js',
-  html: '<strong>and easy to do anywhere, even with Node.js</strong>',
-}
+// Use express JSON middleware
+app.use(express.json());
 
-sgMail
-  .send(msg)
-  .then((response) => {
-    console.log(response[0].statusCode)
-    console.log(response[0].headers)
+// This displays message that the server running and listening to specified port
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+app.post('/contact', (req, res) => {
+  let { package } = req.body;
+  
+  if(!package){
+    res.status(418).send({message: 'We need a contact email package!'});
+  }
+
+  res.status(200).send({
+    package: `Our message package contains: ${package.firstName}`
   })
-  .catch((error) => {
-    console.error(error)
-  })
+})
