@@ -19,7 +19,7 @@ background-repeat:repeat-y;
 export const FooterContainer = styled.div`
 width:100%;
 height:180vh;
-@media screen (max-width: 1200px) and (min-width:500px){
+@media only screen and (max-width: 1200px) and (min-width: 500px){
     grid-template-columns:100%;
     grid-template-rows:65% 35%;
     height:235vh;
@@ -27,7 +27,7 @@ height:180vh;
 @media (max-width:500 px){
     grid-template-columns:100%;
     grid-template-rows:65% 35%;
-    height:240vh;
+    height:100vh;
 }
 display:flex;
 flex-direction:column;

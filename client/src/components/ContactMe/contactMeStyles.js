@@ -6,7 +6,7 @@ height:65vh;
 width:100%;
 display:grid;
 grid-template-columns:65% 35%;
-@media screen (max-width: 1200px) and (min-width: 500px){
+@media only screen and (max-width: 1200px) and (min-width: 500px){
     grid-template-columns:100%;
     grid-template-rows:65% 35%;
     height:120vh;

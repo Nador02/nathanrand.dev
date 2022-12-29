@@ -28,6 +28,20 @@ export const ContactMe = () => {
   let onSubmit = async function(){
     setClicked(true);
 
+    //Check that required fields are filled in, if not break out
+    if(firstName === ''){
+      return;
+    }
+    else if(lastName === ''){
+      return;
+    }
+    else if(email === ''){
+      return;
+    }
+    else if(message === ''){
+      return;
+    }
+
     //Define your JSON object to send to the back end
     let emailPack = {
       firstName: firstName,
@@ -45,17 +59,25 @@ export const ContactMe = () => {
       },
       body: JSON.stringify(emailPack)
     });
+
+    //Once the message is sent to the backend, clear the input fields
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPhoneNum('');
+    setMessage('');
+    setClicked(false);
   }
 
   return (
     <ContactContainer>
         <FormContainer>
             <Title style={{gridColumn:'1/3', height:'100%'}} >Contact Me</Title>
-            <TextField error={firstName === '' && clicked} required id="firstName" label="First Name" variant="filled" name="firstName" color="primary" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setFirstName(e.target.value);}}></TextField>
-            <TextField required id="lastName" label="Last Name" variant="filled" name="lastName" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setLastName(e.target.value);}}></TextField>
-            <TextField required id="email" label="Email" variant="filled" name="email" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setEmail(e.target.value);}}></TextField>
-            <TextField id="phoneNumber" label="Phone Number" variant="filled" name="phoneNumber" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setPhoneNum(e.target.value);}}></TextField>
-            <TextField required id="message" label="Message" variant="filled" name="message" multiline rows={3} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setMessage(e.target.value);}}></TextField>
+            <TextField error={firstName === '' && clicked} required id="firstName" label="First Name" variant="filled" name="firstName" color="primary" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setFirstName(e.target.value);}} value={firstName}></TextField>
+            <TextField error={lastName === '' && clicked} required id="lastName" label="Last Name" variant="filled" name="lastName" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setLastName(e.target.value);}} value={lastName}></TextField>
+            <TextField error={email === '' && clicked} required id="email" label="Email" variant="filled" name="email" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setEmail(e.target.value);}} value={email}></TextField>
+            <TextField id="phoneNumber" label="Phone Number" variant="filled" name="phoneNumber" InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setPhoneNum(e.target.value);}} value={phoneNum}></TextField>
+            <TextField error={message === '' && clicked} required id="message" label="Message" variant="filled" name="message" multiline rows={3} style={{gridColumn:'1/3',}} InputProps={{ style: { fontSize: fontSize, color:'white', fontWeight:500 } }} InputLabelProps={{ style: { fontSize: fontSize } }} onChange={(e) => {setMessage(e.target.value);}} value={message}></TextField>
             <Box sx={{
               display:'flex',
               justifyContent:'center',
@@ -76,14 +98,18 @@ export const ContactMe = () => {
             </SocialsRow>
             <SocialsRow>
               <FontAwesomeIcon icon={faPhone} style={{fontSize:'3.25vmin', color:'white'}}/>
-              <ContactMedium>703-969-3878</ContactMedium>
+              <ContactMedium>(703) 969-3878</ContactMedium>
             </SocialsRow>
             <SocialsRow>
+              <a href="https://www.linkedin.com/in/nrand/" style={{color:'white'}}>
               <FontAwesomeIcon icon={faLinkedin}/>
+              </a>
               <ContactMedium>Connect with me</ContactMedium>
             </SocialsRow>
             <SocialsRow>
+              <a href="https://github.com/Nador02" style={{color:'white'}}>
               <FontAwesomeIcon icon={faSquareGithub}/>
+              </a>
               <ContactMedium>Check out my repos</ContactMedium>
             </SocialsRow>
           </SocialsContainer>
