@@ -20,7 +20,10 @@ width:100%;
 height:15vh;
 display:grid;
 grid-template-columns: 10% 20% 40% 20% 10%;
-@media (max-width:500px){
+@media only screen and (max-width: 1200px) and (min-width: 500px){
+    grid-template-columns: 10% 80% 10%;
+}
+@media (max-width:500 px){
     height:7.5vh;
     grid-template-columns: 10% 80% 10%;
 }
@@ -35,6 +38,7 @@ align-items:start;
 padding:20%;
 color:white;
 font-size:4vmin;
+box-sizing:border-box;
 `;
 
 export const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -60,20 +64,58 @@ font-weight:600;
 font-size:8vmin;
 background-color:black;
 grid-column: 3/4;
-@media (max-width:500px){
+@media (max-width:1200px){
     grid-column: 2/3;
 }
 `;
 
+export const ContentContainer = styled.div`
+width:100%;
+height:fit-content;
+padding:0 5%;
+box-sizing:border-box;
+`;
+
 export const DescriptionRow = styled.div`
 width: 100%;
-height:90vh;
-@media (max-width:500px){
-    height:60vh;
-}
+height: 55vh;
+max-height: 55vh;
+display:flex;
+padding:2.5vh 0;
+justify-content: space-between;
+align-items:center
+box-sizing: border-box;
+`;
+
+export const Description = styled.div`
+flex:1;
+height:100%;
+font-size: 2.5vmin;
+font-weight:200;
+color:white;
+display:flex;
+justify-content:start;
+align-items:center;
+background-color:black;
+`;
+
+export const ImageContainer = styled.div`
+height:100%;
+width:fit-content;
+display:flex;
+justify-content: center;
+align-items:center;
+padding: 2.5%;
+box-sizing:border-box;
+`;
+
+export const Image = styled.img`
+max-height:100%;
+max-width:100%;
 `;
 
 export const Footer = styled.img`
+padding:5% 0 0 0;
 width:100%;
 height:auto;
 z-index:10;
