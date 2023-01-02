@@ -1,4 +1,6 @@
 import { Home } from "./pages/Home/Home";
+import { About } from "./pages/About/About";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { GlobalStyle } from "./globalStyles";
 import { gsap } from "gsap"
@@ -32,10 +34,12 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <ThemeProvider theme={theme}>
           <Routes>
             <Route path="/" element={<Home />}/>
+            <Route path="/about" element={<About />}/>
           </Routes>
           <GlobalStyle />
         </ThemeProvider>

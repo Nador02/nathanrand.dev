@@ -2,11 +2,10 @@ import { RocketIcon } from "./styleRocket"
 import rocketImageStationary from "../../img/Duck-In-Rocket.png"
 import rocketImageThrusting from "../../img/Duck-In-Rocket-With-Thrust.png"
 import { gsap, Linear } from "gsap"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState} from "react"
 import { useMediaQuery } from "@mui/material"
 
 export const Rocket = () => {
-
   //Sets up support variables for switching between images for the engine's being on and off, as well as it's current direction (1 is down, -1 is up)
   let rocketImage = rocketImageStationary;
   let [currentWidth] = useState('14vmin');
@@ -72,6 +71,7 @@ export const Rocket = () => {
           }
           timeline.current = gsap.timeline({
             scrollTrigger:{
+              id:'scroller',
               scrub:0.75,
               onLeaveBack: () => {toggleEngines(true)},
               onEnter: () => {toggleEngines(false)},
