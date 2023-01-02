@@ -1,4 +1,4 @@
-import { AboutContainer, TitleRow, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer} from "./aboutStyles"
+import { AboutContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer} from "./aboutStyles"
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +19,7 @@ export const About = () => {
             <HomeButton>
                 <StyledFontAwesomeIcon icon={faHouse} onClick={buttonOnClick}/>
             </HomeButton>
+            <Title>About Me</Title>
         </TitleRow>
         <DescriptionRow>
         </DescriptionRow>

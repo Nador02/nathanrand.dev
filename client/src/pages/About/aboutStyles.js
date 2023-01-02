@@ -17,12 +17,13 @@ background-repeat:repeat-y;
 
 export const TitleRow = styled.div`
 width:100%;
-height:20vh;
+height:15vh;
+display:grid;
+grid-template-columns: 10% 20% 40% 20% 10%;
 @media (max-width:500px){
     height:7.5vh;
+    grid-template-columns: 10% 80% 10%;
 }
-display:grid;
-grid-template-columns: 10% 80% 10%;
 `;
 
 export const HomeButton = styled.div`
@@ -53,7 +54,15 @@ text-decoration:none;
 color:white;
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:top;
+padding:2.5%;
+font-weight:600;
+font-size:8vmin;
+background-color:black;
+grid-column: 3/4;
+@media (max-width:500px){
+    grid-column: 2/3;
+}
 `;
 
 export const DescriptionRow = styled.div`
