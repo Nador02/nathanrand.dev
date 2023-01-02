@@ -1,11 +1,11 @@
-import { AboutContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer} from "./aboutStyles"
+import { ProjectContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer} from "./forecatStyles"
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
-import footerImg from "../../img/About-Me-Footer.png"
+import footerImg from "../../img/Forecat-Footer.png"
 import volleyballPhoto from "../../img/Volleyball-Picture.jpg"
 import halfPhoto from "../../img/Half-Marathon.jpg"
 
-export const About = () => {
+export const Forecat = () => {
     //Defines routing for the return to homepage functionality
     let navigate = useNavigate();
     let buttonOnClick = () => {
@@ -14,12 +14,12 @@ export const About = () => {
     }
     //Defines the header items used within the Home Page's Header
     return (
-      <AboutContainer>
+      <ProjectContainer>
         <TitleRow>
             <HomeButton>
                 <StyledFontAwesomeIcon icon={faHouse} onClick={buttonOnClick}/>
             </HomeButton>
-            <Title>About Me</Title>
+            <Title>NASA FORECAT</Title>
         </TitleRow>
         <ContentContainer>
             <DescriptionRow>
@@ -43,6 +43,6 @@ export const About = () => {
             </DescriptionRow>
         </ContentContainer>
         <Footer src={footerImg}></Footer>
-      </AboutContainer>
+      </ProjectContainer>
     )
   }
