@@ -22,16 +22,16 @@ export const About = () => {
             <Title>About Me</Title>
         </TitleRow>
         <ContentContainer>
-            <DescriptionRow>
+            <DescriptionRow mirrored={false}>
                 <Description>
-                    My name is Nathan Rand and I grew up and currently reside in a small town called Round Hill, VA. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
+                    My name is Nathan Rand and I grew up and currently reside in the small Virginia town of Round Hill. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
                     I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
                 </Description>
                 <ImageContainer>
                     <Image src={volleyballPhoto} alt="Nathan Rand with a Volleyball" />
                 </ImageContainer>
             </DescriptionRow>
-            <DescriptionRow>
+            <DescriptionRow mirrored={true}>
                 <ImageContainer>
                     <Image src={halfPhoto} alt="Nathan Rand with friend prior to a Half-Marathon" />
                 </ImageContainer>

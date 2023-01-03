@@ -23,7 +23,7 @@ grid-template-columns: 10% 20% 40% 20% 10%;
 @media only screen and (max-width: 1200px) and (min-width: 500px){
     grid-template-columns: 10% 80% 10%;
 }
-@media (max-width:500 px){
+@media (max-width: 500px){
     height:7.5vh;
     grid-template-columns: 10% 80% 10%;
 }
@@ -78,18 +78,23 @@ box-sizing:border-box;
 
 export const DescriptionRow = styled.div`
 width: 100%;
-height: 55vh;
-max-height: 55vh;
+height: fit-content;
+max-height: fit-content;
 display:flex;
-padding:2.5vh 0;
+padding:0 0 2.5vh 0;
 justify-content: space-between;
-align-items:center
+align-items:center;
 box-sizing: border-box;
+@media (max-width:1000px){
+    flex-direction: ${props => props.mirrored ? 'column-reverse' : 'column'};
+    justify-content:center;
+    align-items:space-between;
+}
 `;
 
 export const Description = styled.div`
 flex:1;
-height:100%;
+height:fit-content;
 font-size: 2.5vmin;
 font-weight:200;
 color:white;
@@ -97,6 +102,9 @@ display:flex;
 justify-content:start;
 align-items:center;
 background-color:black;
+@media (max-width:500px){
+    font-size: 3vmin;
+}
 `;
 
 export const ImageContainer = styled.div`
@@ -110,8 +118,11 @@ box-sizing:border-box;
 `;
 
 export const Image = styled.img`
-max-height:100%;
+max-height:50vh;
 max-width:100%;
+@media (max-width: 500px){
+    max-height:25vh;
+}
 `;
 
 export const Footer = styled.img`
