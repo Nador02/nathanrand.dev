@@ -125,6 +125,18 @@ max-width:100%;
 }
 `;
 
+export const Video = styled.iframe`
+height:50vh;
+width:50vw;
+@media only screen and (max-width: 1200px) and (min-width: 500px){
+    width:75vw;
+}
+@media (max-width: 500px){
+    height:30vh;
+    width: 80vw;
+}
+`;
+
 export const Footer = styled.img`
 padding:5% 0 0 0;
 width:100%;

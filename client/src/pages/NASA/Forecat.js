@@ -1,4 +1,4 @@
-import { ProjectContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer} from "./forecatStyles"
+import { ProjectContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer, Video} from "./forecatStyles"
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import footerImg from "../../img/Forecat-Footer.png"
@@ -27,7 +27,10 @@ export const Forecat = () => {
                     I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
                 </Description>
                 <ImageContainer>
-                    <Image src={huntsvillePhoto} alt="Nathan Rand with a Volleyball" />
+                    <Video src='https://www.youtube.com/embed/GBGBwf8aFH8'
+                    frameBorder='0'
+                    allow='autoplay; encrypted-media; fullscreen'
+                    title='video'/>
                 </ImageContainer>
             </DescriptionRow>
             <DescriptionRow mirrored={true}>
