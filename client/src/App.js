@@ -1,6 +1,8 @@
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
-import { Forecat } from "./pages/NASA/Forecat"
+import { Forecat } from "./pages/NASA/Forecat";
+import { Sequoia } from "./pages/Sequoia/Sequoia";
+import { Banavity } from "./pages/Banavity/Banavity";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop"
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import { GlobalStyle } from "./globalStyles";
@@ -42,8 +44,8 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/forecat" element={<Forecat />}/>
-            <Route path="/sequoia" element={<About />}/>
-            <Route path="/banavity" element={<About />}/>
+            <Route path="/sequoia" element={<Sequoia />}/>
+            <Route path="/banavity" element={<Banavity />}/>
           </Routes>
           <GlobalStyle />
         </ThemeProvider>
