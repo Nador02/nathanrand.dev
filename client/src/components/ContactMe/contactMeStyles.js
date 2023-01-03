@@ -56,6 +56,9 @@ align-items:center;
 font-size:8vmin;
 color:white;
 font-weight:600;
+@media(max-width:500px){
+    font-size:10vmin;
+}
 `
 
 export const InfoContent = styled.div`
@@ -65,6 +68,9 @@ padding: 2% 0;
 font-size:2.25vmin;
 font-weight:400;
 color:white;
+@media(max-width:500px){
+    font-size:3vmin;
+}
 `;
 
 export const SocialsContainer = styled.div`
@@ -96,6 +102,9 @@ align-items:center;
 font-size:2.25vmin;
 font-weight:400;
 color:white;
+@media(max-width:500px){
+    font-size:3vmin;
+}
 `;
 
 export const SocialsRow = styled.div`
@@ -107,4 +116,7 @@ align-items:center;
 flex-direction:row;
 font-size:4.25vmin;
 color:white;
+@media(max-width:500px){
+    font-size:5vmin;
+}
 `;

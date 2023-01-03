@@ -10,8 +10,10 @@ export const ContactMe = () => {
   //Define our font size for MUI components based on screen width
   const smallResolution = useMediaQuery('(max-width:500px)');
   let fontSize = 18;
+  let buttonFont = "2.75vmin";
   if(smallResolution){
     fontSize = 14;
+    buttonFont = "3.75vmin";
   }
   
   //Define the state for containing our form fields
@@ -84,11 +86,11 @@ export const ContactMe = () => {
               alignItems:'center',
               gridColumn:'1/3',
             }}>
-              <Button style={{maxWidth:'100%', minWidth:'100%', maxHeight:'50%', minHeight:'50%', fontSize:'2.25vmin', fontWeight:600,}} variant="contained" size="large" onClick={()=>{onSubmit()}}>Beam Up The Transpondence</Button>
+              <Button style={{maxWidth:'100%', minWidth:'100%', maxHeight:'50%', minHeight:'50%', fontSize: buttonFont, fontWeight:600, textTransform: 'none'}} variant="contained" size="large" onClick={()=>{onSubmit()}}>Beam Up The Transpondence</Button>
             </Box>
         </FormContainer>
         <InfoContainer>
-          <Title style={{fontSize:'1.75vmin'}}>Feel Free to</Title>
+          <Title style={{fontSize:'2vmin'}}>Feel Free to</Title>
           <Title style={{fontSize:'6.5vmin'}}>Reach Out</Title>
           <InfoContent>With anything ranging from work inquiries to just wanting to chat. I am always open to new and exciting things and I love meeting new people! Please, utilize the form to the left or connect with me through any of the following mediums!</InfoContent>
           <SocialsContainer>
