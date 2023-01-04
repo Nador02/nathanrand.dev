@@ -24,8 +24,8 @@ export const Banavity = () => {
         <ContentContainer>
             <DescriptionRow mirrored={false}>
                 <Description>
-                    My name is Nathan Rand and I grew up and currently reside in a small town called Round Hill, VA. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
-                    I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
+                    Learning physics for most people is incredibly difficult, be it your first physics class in high school or your dynamics course as a part of your engineering degree. There are not many resources available out there to effectively provide alternative routes to understanding. <br/> <br/> 
+                    With this in mind, during the Spring of 2022 myself and 6 other students at Virginia Tech, from a variety of disciplines, embarked on a journey to create an interactive physics sandbox web-application to solve this very problem. We began to eagerly learn everything we needed to know in order to put together the pieces towards developing our vision.
                 </Description>
                 <ImageContainer>
                     <Video src='https://www.youtube.com/embed/WSowOTIe6iE'
@@ -39,15 +39,14 @@ export const Banavity = () => {
                     <Image src={teamPhoto} alt="The Banavity Team" />
                 </ImageContainer>
                 <Description>
-                Outside of my professional and academic career I like to spend time with friends and family along with doing some of my various hobbies. <br/> <br/> 
-                Some of my main hobbies include board games (current favorite is Terraforming Mars or Catan), baking, coding, reading, soccer, volleyball, and lifting. I am always excited to try new things with friends and add new hobbies that I love to this list! <br/> <br/> 
-                Another program I am apart of involves running Virginia Tech's Engineering Volleyball League, where each Engineering major plays it off in a college wide tournament. This has been a great opportunity for me to meet people from a ton of different backgrounds and have some good fun leading Aerospace to the finals in 2022 (and hopefully a championship title in Spring 2023)!
+                We selected the Vue framework with an Express back-end for the foundation of our application. Utilizing a JavaScript based physics engine called MatterJS and a graphics package called P5, we had all the tools we needed to get started putting all the pieces together.<br/> <br/> 
+                The goal is to create a space where students could recreate their unique problems with the items provided. Then, by clicking play, the students can actually see what would happen in their problem and then be able to gain access to a set of steps and solutions to the underlying physics. Integrating in guided video examples would allow us to create a completely comprehensive learning environment that is directly tailored to all types of learners.<br/> <br/> 
                 </Description>
             </DescriptionRow>
             <DescriptionRow mirrored={false}>
                 <Description>
-                    My name is Nathan Rand and I grew up and currently reside in a small town called Round Hill, VA. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
-                    I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
+                    In the Fall of 2022, Banavity received a seed grant from Kickstart VT, which is a program that provides funding to startups made by current students at Virginia Tech. This was a great moment for our team as we received not just critical funding but invaluable advice on where to take Banavity next.<br/> <br/> 
+                    While Banavity is still in development and isn't ready to be shared with everybody, we are still very excited about how far we have come and the road ahead. The experience that I have gained from leading this team of my peers and some of my closest friends has been incredible and has made the project a success regardless of the result of Banavity from a business perspective. I am incredibly excited for what we will do in 2023 and cannot wait to tackle the next problem we face with the team.<br/><br/>
                 </Description>
                 <ImageContainer>
                     <Image src={kickstartPhoto} alt="The Banavity team receiving their $500 grant money for their startup from Kickstart VT" />

@@ -23,8 +23,9 @@ export const Sequoia = () => {
         <ContentContainer>
             <DescriptionRow mirrored={false}>
                 <Description>
-                    My name is Nathan Rand and I grew up and currently reside in a small town called Round Hill, VA. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
-                    I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
+                    During the Summer of 2022, I worked with 5 other interns at Sequoia Holdings to autonomously develop a full-stack web application from scratch.<br/> <br/> 
+                    The application's purpose is to create an environment in which people can store, modify, and easily access data surrounding their contracts, services, and conferences. It was developed primarily with MySQL, Express, Angular, and NodeJS (a modified MEAN stack).<br/><br/>
+                    My primary focus and contribution lied in the front-end development, working extensively with TypeScript in the Angular framework to create a user-friendly and efficient environment for users.
                 </Description>
                 <ImageContainer>
                     <Video src='https://www.youtube.com/embed/bMe73kxsjk4'
@@ -38,9 +39,9 @@ export const Sequoia = () => {
                     <Image src={teamPhoto} alt="Nathan Rand with friend prior to a Half-Marathon" />
                 </ImageContainer>
                 <Description>
-                Outside of my professional and academic career I like to spend time with friends and family along with doing some of my various hobbies. <br/> <br/> 
-                Some of my main hobbies include board games (current favorite is Terraforming Mars or Catan), baking, coding, reading, soccer, volleyball, and lifting. I am always excited to try new things with friends and add new hobbies that I love to this list! <br/> <br/> 
-                Another program I am apart of involves running Virginia Tech's Engineering Volleyball League, where each Engineering major plays it off in a college wide tournament. This has been a great opportunity for me to meet people from a ton of different backgrounds and have some good fun leading Aerospace to the finals in 2022 (and hopefully a championship title in Spring 2023)!
+                This project really marked my first dive into web-development, with no prior Angular knowledge the experience was that much more valuable.<br/> <br/> 
+                As the 6 of us worked almost completely alone we had to learn all the intricacies that come with dividing up a large project, along with ensuring that the end product (in this case the front-end, back-end, and database) all work together seamlessly. While I developed more programming knowledge then I ever had before at Sequoia, I think that the advancement of my communication and teamwork skills was by far the most rewarding result of the work.<br/> <br/>
+                I am beyond excited to return with a good portion of the intern team in the Summer of 2023 to continue work on Sequoia Canopy!
                 </Description>
             </DescriptionRow>
         </ContentContainer>

@@ -23,8 +23,8 @@ export const Forecat = () => {
         <ContentContainer>
             <DescriptionRow mirrored={false}>
                 <Description>
-                    My name is Nathan Rand and I grew up and currently reside in a small town called Round Hill, VA. I am currently studying Aerospace Engineering at Virginia Tech in Blacksburg, VA. <br/> <br/> 
-                    I really enjoy working on projects at the intersection of Aerospace and Software engineering, especially those with space applications (like my current focus of Nozzle Design with a variety of techniques ranging from mathematical characteristics to neural networks). While this subject matter is something I am very passionate about, what I value more is working on a team of exciting and similarly driven people.<br/><br/>
+                    During my time with NASA Marshall Space Flight Center's (MSFC) Combustion Devices Branch I had the opportunity to independently develop my own piece of design software. This project was the First Order Rocket Engine Contour Analysis Tool, or FORECAT for short.<br/> <br/> 
+                    This tool is intended to provide an easy to use method for designing rocket engine chamber and nozzle contours using the method of characteristics (MOC). The foundation for this project comes from an old software developed in FORTRAN IV by NASA in the 60s that I converted into Python and C, and then began to expand upon with new functionality such as the chamber contours and integrated truncation algorithms.<br/><br/>
                 </Description>
                 <ImageContainer>
                     <Video src='https://www.youtube.com/embed/GBGBwf8aFH8'
@@ -38,9 +38,9 @@ export const Forecat = () => {
                     <Image src={huntsvillePhoto} alt="Nathan Rand with friend prior to a Half-Marathon" />
                 </ImageContainer>
                 <Description>
-                Outside of my professional and academic career I like to spend time with friends and family along with doing some of my various hobbies. <br/> <br/> 
-                Some of my main hobbies include board games (current favorite is Terraforming Mars or Catan), baking, coding, reading, soccer, volleyball, and lifting. I am always excited to try new things with friends and add new hobbies that I love to this list! <br/> <br/> 
-                Another program I am apart of involves running Virginia Tech's Engineering Volleyball League, where each Engineering major plays it off in a college wide tournament. This has been a great opportunity for me to meet people from a ton of different backgrounds and have some good fun leading Aerospace to the finals in 2022 (and hopefully a championship title in Spring 2023)!
+                The shift from an outdated language such as FORTRAN IV to more modern and supported ones like Python and C for the back-end allows for an escape from the plethora of shortcomings that frequently surround legacy code.<br/> <br/> 
+                The front-end of this software was developed with JavaScript, HTML, CSS, and Python. This allows for a more flexible and responsive user experience.<br/> <br/> 
+                Overall this new software is still a running project, but it already has estimated cost savings for NASA of upwards of $250,000 annually. I plan to return to MSFC in the Summer of 2023 in order to continue my work towards bringing NASA FORECAT to completion.<br/> <br/> 
                 </Description>
             </DescriptionRow>
         </ContentContainer>
