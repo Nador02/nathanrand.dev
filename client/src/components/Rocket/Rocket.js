@@ -45,7 +45,6 @@ export const Rocket = () => {
     createTimeline();
 
     let resize = () => {
-      console.log((window.innerWidth/window.innerHeight));
       clearTimeout(timeOutResize.current);
       timeOutResize.current = setTimeout(resized, 1000);
     }
