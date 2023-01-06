@@ -54,7 +54,7 @@ export const ContactMe = () => {
     }
 
     //Send the information to the Express backend
-    fetch(process.env.REACT_APP_CONTACT_URL + "/contact", {
+    fetch("https://dev.nathanrand.dev/contact", {
       method: 'POST',
       headers: {
           'Content-Type':'application/json'
