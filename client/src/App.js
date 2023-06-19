@@ -4,7 +4,7 @@ import { Forecat } from "./pages/NASA/Forecat";
 import { Sequoia } from "./pages/Sequoia/Sequoia";
 import { Banavity } from "./pages/Banavity/Banavity";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {HashRouter as Router, Routes, Route} from "react-router-dom";
 import { GlobalStyle } from "./globalStyles";
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -36,7 +36,7 @@ function App() {
   });
 
   return (
-    <Router>
+    <Router basename='/'>
       <ScrollToTop />
       <div className="App">
         <ThemeProvider theme={theme}>
