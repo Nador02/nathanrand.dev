@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/nathanrand.dev/static/css/main.4c306577.css",
+    "main.js": "/nathanrand.dev/static/js/main.9bfbe145.js",
+    "static/js/787.15330507.chunk.js": "/nathanrand.dev/static/js/787.15330507.chunk.js",
+    "static/media/Banavity-Kickstart.jpg": "/nathanrand.dev/static/media/Banavity-Kickstart.2fdaa8b9947871d69893.jpg",
+    "static/media/Huntsville-Photo.jpg": "/nathanrand.dev/static/media/Huntsville-Photo.0838a92b58a42aadf9a5.jpg",
+    "static/media/Banavity-Team.JPG": "/nathanrand.dev/static/media/Banavity-Team.2c376a3be27fee77a686.JPG",
+    "static/media/Half-Marathon.jpg": "/nathanrand.dev/static/media/Half-Marathon.05eb093fc4ea5c28e052.jpg",
+    "static/media/Sequoia-Team.png": "/nathanrand.dev/static/media/Sequoia-Team.ad1fa2c3b0854b7472ef.png",
+    "static/media/Banavity-Planet.png": "/nathanrand.dev/static/media/Banavity-Planet.5f935462f371c536b9fc.png",
+    "static/media/Landing-Surface.png": "/nathanrand.dev/static/media/Landing-Surface.9f49a8737db3d4e71ca3.png",
+    "static/media/Forecat-Planet.png": "/nathanrand.dev/static/media/Forecat-Planet.2e4bc8d7e62d8fa18c7d.png",
+    "static/media/Sequoia-Planet.png": "/nathanrand.dev/static/media/Sequoia-Planet.c78342147834164aa945.png",
+    "static/media/Space-Station.png": "/nathanrand.dev/static/media/Space-Station.4d3ddcabb08ff6c573cc.png",
+    "static/media/Earth.png": "/nathanrand.dev/static/media/Earth.1993d04f025da9822860.png",
+    "static/media/About-Me-Planet.png": "/nathanrand.dev/static/media/About-Me-Planet.7e782bd5edf2a8af83af.png",
+    "static/media/Volleyball-Picture.jpg": "/nathanrand.dev/static/media/Volleyball-Picture.2424f880c57ac90999ff.jpg",
+    "static/media/Banavity-Footer.png": "/nathanrand.dev/static/media/Banavity-Footer.2f7029db471ba4696190.png",
+    "static/media/About-Me-Footer.png": "/nathanrand.dev/static/media/About-Me-Footer.9819f369cb7b5a2e5be2.png",
+    "static/media/Duck-In-Rocket-With-Thrust.png": "/nathanrand.dev/static/media/Duck-In-Rocket-With-Thrust.6f58034b27f3cffdaa75.png",
+    "static/media/Sequoia-Footer.png": "/nathanrand.dev/static/media/Sequoia-Footer.90ad07d00a131a61d697.png",
+    "static/media/Duck-In-Rocket.png": "/nathanrand.dev/static/media/Duck-In-Rocket.975a8689827167544c96.png",
+    "static/media/Forecat-Footer.png": "/nathanrand.dev/static/media/Forecat-Footer.08fad2938e7d145839c6.png",
+    "static/media/Stars-To-Atmosphere-Background.png": "/nathanrand.dev/static/media/Stars-To-Atmosphere-Background.20f4a9bd698f34312c24.png",
+    "static/media/Starry-Background-Simple.png": "/nathanrand.dev/static/media/Starry-Background-Simple.59bee0520d2769b98a70.png",
+    "index.html": "/nathanrand.dev/index.html",
+    "main.4c306577.css.map": "/nathanrand.dev/static/css/main.4c306577.css.map",
+    "main.9bfbe145.js.map": "/nathanrand.dev/static/js/main.9bfbe145.js.map",
+    "787.15330507.chunk.js.map": "/nathanrand.dev/static/js/787.15330507.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4c306577.css",
+    "static/js/main.9bfbe145.js"
+  ]
+}
