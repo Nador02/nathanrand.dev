@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nathanrand.dev/static/css/main.4c306577.css",
-    "main.js": "/nathanrand.dev/static/js/main.b04af6ce.js",
+    "main.js": "/nathanrand.dev/static/js/main.671ce76c.js",
     "static/js/787.15330507.chunk.js": "/nathanrand.dev/static/js/787.15330507.chunk.js",
     "static/media/Banavity-Kickstart.jpg": "/nathanrand.dev/static/media/Banavity-Kickstart.2fdaa8b9947871d69893.jpg",
     "static/media/Huntsville-Photo.jpg": "/nathanrand.dev/static/media/Huntsville-Photo.0838a92b58a42aadf9a5.jpg",
@@ -26,11 +26,11 @@
     "static/media/Starry-Background-Simple.png": "/nathanrand.dev/static/media/Starry-Background-Simple.59bee0520d2769b98a70.png",
     "index.html": "/nathanrand.dev/index.html",
     "main.4c306577.css.map": "/nathanrand.dev/static/css/main.4c306577.css.map",
-    "main.b04af6ce.js.map": "/nathanrand.dev/static/js/main.b04af6ce.js.map",
+    "main.671ce76c.js.map": "/nathanrand.dev/static/js/main.671ce76c.js.map",
     "787.15330507.chunk.js.map": "/nathanrand.dev/static/js/787.15330507.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c306577.css",
-    "static/js/main.b04af6ce.js"
+    "static/js/main.671ce76c.js"
   ]
 }
