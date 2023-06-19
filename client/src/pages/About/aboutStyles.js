@@ -7,7 +7,7 @@ position:relative;
 width:100%;
 height:fit-content;
 display:flex;
-flex-direction: column;s
+flex-direction: column;
 justify-content: flex-start;
 align-items: center;
 background-image: url(${starryBackground});
@@ -63,7 +63,7 @@ padding:2.5%;
 font-weight:600;
 font-size:8vmin;
 background-color:black;
-grid-column: 3/4;
+grid-column: 2/5;
 @media (max-width:1200px){
     grid-column: 2/3;
 }
