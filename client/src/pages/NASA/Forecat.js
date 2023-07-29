@@ -1,8 +1,9 @@
-import { ProjectContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer, Video} from "./forecatStyles"
+import { ProjectContainer, TitleRow, Title, DescriptionRow, HomeButton, StyledFontAwesomeIcon, Footer, Description, ImageContainer, Image, ContentContainer} from "./forecatStyles"
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import footerImg from "../../img/Forecat-Footer.png"
 import huntsvillePhoto from "../../img/Huntsville-Photo.jpg"
+import forecatScreenshot from "../../img/FORECAT_Screenshot.png"
 
 export const Forecat = () => {
     //Defines routing for the return to homepage functionality
@@ -27,10 +28,7 @@ export const Forecat = () => {
                     This tool is intended to provide an easy to use method for designing rocket engine chamber and nozzle contours using the method of characteristics (MOC). The foundation for this project comes from an old software developed in FORTRAN IV by NASA in the 60s that I converted into Python and C, and then began to expand upon with new functionality such as the chamber contours and integrated truncation algorithms.<br/><br/>
                 </Description>
                 <ImageContainer>
-                    <Video src='https://www.youtube.com/embed/GBGBwf8aFH8'
-                    frameBorder='0'
-                    allow='autoplay; encrypted-media; fullscreen'
-                    title='video'/>
+                    <Image src={forecatScreenshot} alt="Homepage screenshot of the FORECAT Software" />
                 </ImageContainer>
             </DescriptionRow>
             <DescriptionRow mirrored={true}>
