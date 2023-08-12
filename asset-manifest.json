@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4c306577.css",
-    "main.js": "/static/js/main.b967b097.js",
+    "main.js": "/static/js/main.1744344f.js",
     "static/js/787.15330507.chunk.js": "/static/js/787.15330507.chunk.js",
     "static/media/Banavity-Kickstart.jpg": "/static/media/Banavity-Kickstart.2fdaa8b9947871d69893.jpg",
     "static/media/Huntsville-Photo.jpg": "/static/media/Huntsville-Photo.0838a92b58a42aadf9a5.jpg",
@@ -27,11 +27,11 @@
     "static/media/Starry-Background-Simple.png": "/static/media/Starry-Background-Simple.59bee0520d2769b98a70.png",
     "index.html": "/index.html",
     "main.4c306577.css.map": "/static/css/main.4c306577.css.map",
-    "main.b967b097.js.map": "/static/js/main.b967b097.js.map",
+    "main.1744344f.js.map": "/static/js/main.1744344f.js.map",
     "787.15330507.chunk.js.map": "/static/js/787.15330507.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c306577.css",
-    "static/js/main.b967b097.js"
+    "static/js/main.1744344f.js"
   ]
 }
