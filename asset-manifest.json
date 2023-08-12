@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.4c306577.css",
-    "main.js": "/static/js/main.881d3f69.js",
+    "main.js": "/static/js/main.b967b097.js",
     "static/js/787.15330507.chunk.js": "/static/js/787.15330507.chunk.js",
     "static/media/Banavity-Kickstart.jpg": "/static/media/Banavity-Kickstart.2fdaa8b9947871d69893.jpg",
     "static/media/Huntsville-Photo.jpg": "/static/media/Huntsville-Photo.0838a92b58a42aadf9a5.jpg",
     "static/media/Banavity-Team.JPG": "/static/media/Banavity-Team.2c376a3be27fee77a686.JPG",
-    "static/media/FORECAT_Screenshot.png": "/static/media/FORECAT_Screenshot.9a92d4e18fcdcef8d7a1.png",
     "static/media/Half-Marathon.jpg": "/static/media/Half-Marathon.05eb093fc4ea5c28e052.jpg",
     "static/media/Sequoia-Team.png": "/static/media/Sequoia-Team.ad1fa2c3b0854b7472ef.png",
+    "static/media/FIRE_Screenshot.png": "/static/media/FIRE_Screenshot.3e5e7f190dce80909632.png",
     "static/media/Banavity-Planet.png": "/static/media/Banavity-Planet.5f935462f371c536b9fc.png",
     "static/media/Landing-Surface.png": "/static/media/Landing-Surface.9f49a8737db3d4e71ca3.png",
     "static/media/Forecat-Planet.png": "/static/media/Forecat-Planet.2e4bc8d7e62d8fa18c7d.png",
@@ -27,11 +27,11 @@
     "static/media/Starry-Background-Simple.png": "/static/media/Starry-Background-Simple.59bee0520d2769b98a70.png",
     "index.html": "/index.html",
     "main.4c306577.css.map": "/static/css/main.4c306577.css.map",
-    "main.881d3f69.js.map": "/static/js/main.881d3f69.js.map",
+    "main.b967b097.js.map": "/static/js/main.b967b097.js.map",
     "787.15330507.chunk.js.map": "/static/js/787.15330507.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c306577.css",
-    "static/js/main.881d3f69.js"
+    "static/js/main.b967b097.js"
   ]
 }
