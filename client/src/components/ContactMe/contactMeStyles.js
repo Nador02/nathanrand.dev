@@ -2,44 +2,15 @@ import styled from "styled-components";
 
 //Styling for the contact me section
 export const ContactContainer = styled.div`
-height:65vh;
+height:375px;
 width:100%;
-display:grid;
-grid-template-columns:65% 35%;
-@media only screen and (max-width: 1200px) and (min-width: 500px){
-    grid-template-columns:100%;
-    grid-template-rows:65% 35%;
-    height:120vh;
-}
-@media (max-width: 500px){
-    grid-template-columns:100%;
-    grid-template-rows:65% 35%;
-    height:100vh;
-}
 background-color:#67C167;
-`;
-
-export const FormContainer = styled.form`
-width:100%;
-height:100%;
-padding:0 5% 5% 10%;
-@media (max-width: 1200px){
-    padding: 5% 0 0 5%;
-}
-box-sizing:border-box;
-display:grid;
-grid-template-columns:45% 45%;
-grid-template-rows: 22.5% 15% 15% 20% 27.5%;
-column-gap:5%;
 `;
 
 export const InfoContainer = styled.div`
 width:100%;
 height:100%;
-padding:0 7.5%;
-@media (max-width: 1200px){
-    padding:0 5%;
-}
+padding:2.5% 5%;
 box-sizing:border-box;
 display:flex;
 flex-direction:column;
@@ -75,7 +46,7 @@ color:white;
 
 export const SocialsContainer = styled.div`
 width:100%;
-height:22%;
+height:40%;
 display:grid;
 grid-template-columns: 50% 50%;
 grid-template-rows: 47.5% 47.5%;
@@ -87,7 +58,7 @@ grid-template-rows: 47.5% 47.5%;
 row-gap:2%;
 column-gap:5%;
 font-size:2.25vmin;
-font-weight:400,
+font-weight:400;
 color:white;
 `
 
